@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Blueprint Brand Palette */
+  --color-primary: oklch(0.55 0.22 261.22);
+  /* #4F46E5 Indigo */
+  --color-primary-light: oklch(0.95 0.03 261.22);
+  /* #EEF2FF */
+  --color-accent: oklch(0.55 0.25 291.56);
+  /* #7C3AED Violet */
+  --color-bg-light: oklch(0.98 0.01 261.22);
+  /* #F8FAFC */
+  --color-bg-dark: oklch(0.15 0.04 261.22);
+  /* #0F172A */
+  --color-text-primary: oklch(0.15 0.04 261.22);
+  --color-text-secondary: oklch(0.45 0.04 261.22);
+  --color-success: oklch(0.63 0.18 160.23);
+  /* #10B981 */
+  --color-warning: oklch(0.77 0.15 44.47);
+  /* #F59E0B */
+
+  --font-sans: "DM Sans", ui-sans-serif, system-ui;
+  --font-serif: "Playfair Display", serif;
+}
+
+/* Custom Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans bg-bg-light text-text-primary antialiased selection:bg-primary/20;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+/* Blueprint Utility Components */
+@layer components {
+  .section-padding {
+    @apply py-20 sm:py-28 px-5 sm:px-8 lg:px-12;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl rounded-3xl;
+  }
+
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-full font-bold transition-all hover:shadow-lg hover:shadow-primary/30 active:scale-95 flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary border-2 border-primary/10 px-8 py-4 rounded-full font-bold transition-all hover:bg-primary-light flex items-center justify-center gap-2;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent font-extrabold;
+  }
+}
+
+/* Tailwind v4 Opacity Helper Classes (Safe fallbacks) */
+.bg-primary-5 {
+  background-color: rgba(79, 70, 229, 0.05);
+}
+
+.bg-primary-10 {
+  background-color: rgba(79, 70, 229, 0.10);
+}
+
+.bg-primary-3 {
+  background-color: rgba(79, 70, 229, 0.03);
+}
+
+.text-white-60 {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.text-white-40 {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.border-white-15 {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.bg-white-10 {
+  background-color: rgba(255, 255, 255, 0.10);
+}
