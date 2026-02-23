@@ -8,28 +8,28 @@ const FEATURES = [
         title: 'Instant Contract Audits',
         description: 'Upload a purchase agreement and get a full review in seconds. DealDoc identifies missing signatures, mismatched dates, and compliance gaps before they become problems.',
         bullets: ['Flags missing initials', 'Checks state compliance', 'Extracts key dates'],
-        image: '/audit_image.jpeg'
+        image: '/Instant Contract Audits.png'
     },
     {
         Icon: CalendarClock,
         title: 'Deadline Tracking',
         description: 'Every critical date — inspection periods, contingency removals, loan milestones — is automatically tracked with smart reminders.',
         bullets: ['Auto-generates checklists', 'Syncs with your calendar', 'Multi-channel alerts'],
-        image: '/deadline-tracking.jpeg'
+        image: '/Deadline Tracking.png'
     },
     {
         Icon: Send,
         title: 'Draft Emails Automatically',
         description: 'DealDoc drafts polished, professional emails for you — from status updates to missing documentation requests. Just review and send.',
         bullets: ['Maintains your tone', 'Handles follow-ups', 'One-click send'],
-        image: '/draftl-email.jpeg'
+        image: '/Draft Emails Automatically.png'
     },
     {
         Icon: Waypoints,
         title: 'Seamless Workflow',
         description: 'Choose from pre-built state templates or customize your own. DealDoc builds your entire transaction roadmap instantly.',
         bullets: ['15+ transaction templates', 'Team collaboration', 'Full audit trail'],
-        image: '/workflow.jpeg'
+        image: '/Seamless Workflow.png'
     },
 ];
 
@@ -78,7 +78,7 @@ export default function Features() {
                                 </ul>
                             </div>
                             <div className="flex-1 w-full">
-                                <div className="aspect-video rounded-[32px] overflow-hidden shadow-2xl border border-primary/10 relative group">
+                                <div className="aspect-video rounded-[32px] overflow-hidden card-shadow border border-primary/10 relative group">
                                     <img
                                         src={feature.image}
                                         alt={feature.title}

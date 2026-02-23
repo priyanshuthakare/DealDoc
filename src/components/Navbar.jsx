@@ -1,4 +1,4 @@
-import { FileCheck2, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { cn } from '../lib/utils';
 
@@ -29,19 +29,19 @@ export default function Navbar() {
                 scrolled ? "top-4 scale-95" : "top-12"
             )}
         >
+            {/* Light blue gradient glow behind navbar */}
+            <div className="absolute inset-x-0 -bottom-6 h-16 bg-[radial-gradient(ellipse_at_center,rgba(0,51,255,0.12)_0%,transparent_70%)] blur-xl pointer-events-none" />
             <div
                 className={cn(
                     "container-max h-20 rounded-full flex items-center justify-between px-8 border transition-all duration-300",
                     scrolled
-                        ? "bg-white/90 backdrop-blur-md shadow-2xl border-primary/10"
-                        : "bg-white/50 backdrop-blur-sm border-white/20"
+                        ? "bg-white/95 backdrop-blur-md shadow-[0_0_24px_6px_rgba(0,0,0,0.12)] border-gray-200"
+                        : "bg-white shadow-[0_0_20px_4px_rgba(0,0,0,0.10)] border-gray-100"
                 )}
             >
                 {/* Logo */}
                 <div className="flex items-center gap-2 text-xl font-black transition-transform hover:scale-105">
-                    <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
-                        <FileCheck2 size={18} fill="currentColor" className="text-white" />
-                    </div>
+                    <img src="/logo.png" alt="DealDoc Logo" className="w-9 h-9 object-contain" />
                     <span>DealDoc<span className="text-primary italic">.ai</span></span>
                 </div>
 

@@ -75,8 +75,8 @@ export default function Pricing() {
                             className={cn(
                                 "flex flex-col p-10 rounded-[40px] transition-all duration-700 h-full",
                                 plan.highlight
-                                    ? "bg-bg-dark text-white ring-8 ring-primary/5 shadow-2xl relative z-10 scale-105"
-                                    : "bg-white border border-primary/10",
+                                    ? "bg-bg-dark text-white ring-8 ring-primary/5 card-shadow relative z-10 scale-105"
+                                    : "bg-white border border-primary/10 card-shadow",
                                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                             )}
                             style={{ transitionDelay: `${i * 150}ms` }}

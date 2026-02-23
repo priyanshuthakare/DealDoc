@@ -48,7 +48,7 @@ export default function Faq() {
                             <div
                                 key={faq.q}
                                 className={cn(
-                                    "border rounded-[32px] overflow-hidden transition-all",
+                                    "border rounded-[32px] overflow-hidden transition-all card-shadow",
                                     openIndex === i ? "border-primary bg-primary-light/20" : "border-primary/10 bg-white"
                                 )}
                             >

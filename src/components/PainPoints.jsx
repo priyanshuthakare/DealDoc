@@ -44,18 +44,36 @@ export default function PainPoints() {
                         <div
                             key={point.title}
                             className={cn(
-                                "glass-card p-10 transition-all duration-700",
+                                "relative overflow-hidden rounded-3xl p-10 card-shadow transition-all duration-700",
                                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                             )}
-                            style={{ transitionDelay: `${i * 150}ms` }}
+                            style={{
+                                transitionDelay: `${i * 150}ms`,
+                                backgroundColor: '#fcfcfcff',
+                            }}
                         >
-                            <div className="w-14 h-14 bg-primary-light text-primary rounded-2xl flex items-center justify-center mb-6">
+                            {/* Decorative background image */}
+                            <img
+                                src="/card_bg.png"
+                                alt=""
+                                className="absolute top-0 left-0 pointer-events-none"
+                                style={{ zIndex: 0 }}
+                            />
+
+                            {/* Icon positioned on top of the semicircle */}
+                            <div
+                                className="absolute z-10 w-14 h-14 bg-white text-primary rounded-2xl flex items-center justify-center shadow-md"
+                                style={{ top: '20px', left: '75px' }}
+                            >
                                 <point.Icon size={28} />
                             </div>
-                            <h3 className="text-2xl font-bold mb-4">{point.title}</h3>
-                            <p className="text-text-secondary leading-relaxed">
-                                {point.description}
-                            </p>
+
+                            <div className="relative z-10" style={{ marginTop: '105px' }}>
+                                <h3 className="text-2xl font-bold mb-4">{point.title}</h3>
+                                <p className="text-text-secondary leading-relaxed">
+                                    {point.description}
+                                </p>
+                            </div>
                         </div>
                     ))}
                 </div>

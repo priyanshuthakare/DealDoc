@@ -1,4 +1,4 @@
-import { FileCheck2, Github, Linkedin, Twitter } from 'lucide-react';
+import { Github, Linkedin, Twitter } from 'lucide-react';
 
 const LINKS = {
     Product: [
@@ -30,9 +30,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
                     <div className="lg:col-span-2">
                         <div className="flex items-center gap-2 text-2xl font-black mb-6">
-                            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                                <FileCheck2 size={24} fill="currentColor" />
-                            </div>
+                            <img src="/logo.png" alt="DealDoc Logo" className="w-11 h-11 object-contain" />
                             <span>DealDoc<span className="text-primary italic">.ai</span></span>
                         </div>
                         <p className="text-white/50 max-w-sm mb-8 leading-relaxed">

@@ -52,7 +52,7 @@ export default function FinalCta() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
             )}>
                 {!submitted ? (
-                    <div className="max-w-3xl mx-auto rounded-[40px] bg-white/5 border border-white/10 p-8 sm:p-12 backdrop-blur-xl">
+                    <div className="max-w-3xl mx-auto rounded-[40px] bg-white/5 border border-white/10 p-8 sm:p-12 backdrop-blur-xl card-shadow">
                         <div className="text-center mb-10">
                             <h2 className="text-3xl sm:text-5xl mb-4 font-extrabold tracking-tight">
                                 Claim Your Spot on the <span className="text-primary italic">Priority Waitlist</span>

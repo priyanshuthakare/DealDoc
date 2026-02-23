@@ -42,7 +42,7 @@ export default function Integrations() {
                             <div
                                 key={logo.name}
                                 className={cn(
-                                    "aspect-square bg-white border border-primary/5 rounded-2xl p-6 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-700 shadow-sm hover:shadow-xl",
+                                    "aspect-square bg-white border border-primary/5 rounded-2xl p-6 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-700 card-shadow",
                                     isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
                                 )}
                                 style={{ transitionDelay: `${i * 100}ms` }}

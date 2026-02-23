@@ -41,7 +41,7 @@ export default function HowItWorks() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
                     {/* Connection Line (Desktop) */}
-                    <div className="hidden md:block absolute top-12 left-1/4 right-1/4 h-px border-t border-dashed border-white/10" />
+                    {/* <div className="hidden md:block absolute top-12 left-1/4 right-1/4 h-px border-t border-dashed border-white/10" /> */}
 
                     {STEPS.map((step, i) => (
                         <div

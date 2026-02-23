@@ -66,7 +66,7 @@ export default function RoiCalculator() {
 
                     {/* Savings Box */}
                     <div className={cn(
-                        "lg:col-span-2 p-10 rounded-[40px] bg-gradient-to-br from-primary to-accent text-white shadow-2xl text-center flex flex-col justify-center transition-all duration-700",
+                        "lg:col-span-2 p-10 rounded-[40px] bg-gradient-to-br from-[#0A0A2E] to-[#0033FF] text-white card-shadow text-center flex flex-col justify-center transition-all duration-700",
                         isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
                     )}>
                         <h3 className="text-2xl font-bold mb-8">Potential Cost Savings</h3>

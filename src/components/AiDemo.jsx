@@ -7,17 +7,17 @@ const SLIDES = [
     {
         title: 'Review Purchase Agreements',
         description: 'Upload any contract and DealDoc flags missing initials, mismatched dates, and compliance gaps in seconds.',
-        image: '/review-purchase-agreement.jpeg'
+        image: '/Review Purchase Agreements action.png'
     },
     {
         title: 'Automated Deadlines',
         description: 'Every critical date — inspection, loan approval, closing — is extracted and tracked automatically with reminders.',
-        image: '/automated-deadlines.jpeg'
+        image: '/Automated Deadlines.png'
     },
     {
         title: 'Professional Email Drafts',
         description: 'No more robotic copy. DealDoc drafts polished updates for your clients, the lender, and the title company.',
-        image: '/proffessional_email_draft.jpeg'
+        image: '/Professional Email Drafts.png'
     },
 ];
 
@@ -31,8 +31,66 @@ export default function AiDemo() {
     return (
         <section ref={ref} className="section-padding bg-white relative overflow-hidden">
             <div className="container-max">
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                    <h2 className="text-3xl sm:text-5xl font-extrabold mb-6 leading-tight">
+                {/* Large decorative semicircles at section edges */}
+                {/* Left edge — navy semicircle with light blue behind */}
+                <div
+                    className="hidden sm:block absolute"
+                    style={{
+                        width: '180px',
+                        height: '180px',
+                        top: '50%',
+                        left: '-40px',
+                        transform: 'translateY(-50%)',
+                        borderRadius: '0 180px 180px 0',
+                        backgroundColor: '#B8CCFA',
+                        zIndex: 0,
+                    }}
+                />
+                <div
+                    className="hidden sm:block absolute"
+                    style={{
+                        width: '120px',
+                        height: '120px',
+                        top: '50%',
+                        left: '-30px',
+                        transform: 'translateY(-50%)',
+                        borderRadius: '0 120px 120px 0',
+                        backgroundColor: '#0A0A2E',
+                        zIndex: 1,
+                    }}
+                />
+
+                {/* Right edge — blue semicircle with light blue behind */}
+                <div
+                    className="hidden sm:block absolute"
+                    style={{
+                        width: '180px',
+                        height: '180px',
+                        top: '50%',
+                        right: '-40px',
+                        transform: 'translateY(-50%)',
+                        borderRadius: '180px 0 0 180px',
+                        backgroundColor: '#B8CCFA',
+                        zIndex: 0,
+                    }}
+                />
+                <div
+                    className="hidden sm:block absolute"
+                    style={{
+                        width: '120px',
+                        height: '120px',
+                        top: '50%',
+                        right: '-30px',
+                        transform: 'translateY(-50%)',
+                        borderRadius: '120px 0 0 120px',
+                        backgroundColor: '#2563EB',
+                        zIndex: 1,
+                    }}
+                />
+
+                {/* Title */}
+                <div className="relative z-10 text-center mb-16">
+                    <h2 className="text-3xl sm:text-5xl font-extrabold leading-tight">
                         See DealDoc <br />
                         <span className="gradient-text">In Action</span>
                     </h2>
@@ -43,7 +101,7 @@ export default function AiDemo() {
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                 )}>
                     {/* Carousel */}
-                    <div className="aspect-[16/9] rounded-[40px] overflow-hidden shadow-2xl relative border-8 border-bg-light">
+                    <div className="aspect-[16/9] rounded-[40px] overflow-hidden card-shadow relative border-8 border-bg-light">
                         {SLIDES.map((slide, i) => (
                             <div
                                 key={slide.title}
@@ -53,7 +111,7 @@ export default function AiDemo() {
                                 )}
                             >
                                 <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/80 via-transparent to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
                                 <div className="absolute bottom-10 left-10 right-10">
                                     <h3 className="text-2xl font-bold text-white mb-2">{slide.title}</h3>
                                     <p className="text-white/60 max-w-lg">{slide.description}</p>

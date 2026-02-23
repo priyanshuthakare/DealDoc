@@ -37,17 +37,21 @@ export default function Hero() {
     };
 
     return (
-        <section className="relative pt-32 pb-20 overflow-hidden">
-            {/* Background Decorations */}
-            <div className="absolute inset-0 -z-10 bg-bg-light">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(circle_at_top,rgba(79,70,229,0.05)_0%,transparent_100%)]" />
-            </div>
+        <section
+            className="relative pt-32 pb-20 overflow-hidden"
+            style={{
+                backgroundImage: 'url(/hero_bg.png)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+            }}
+        >
 
             <div className="container-max text-center">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-light text-primary text-sm font-bold mb-8 animate-fade-in">
+                {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-light text-primary text-sm font-bold mb-8 animate-fade-in">
                     <Sparkles size={16} fill="currentColor" />
                     <span>Now in private beta for CA, TX, and FL</span>
-                </div>
+                </div> */}
 
                 <h1 className="text-[44px] sm:text-[68px] leading-[1.05] mb-8 animate-fade-in-up">
                     Stop Spending 3 Hours a Night on <br className="hidden sm:block" />
