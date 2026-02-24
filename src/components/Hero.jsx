@@ -1,4 +1,4 @@
-import { ArrowUpRight, BadgeCheck, ShieldCheck, Sparkles } from 'lucide-react';
+import { ArrowUpRight, BadgeCheck, ShieldCheck } from 'lucide-react';
 import { useState } from 'react';
 import { useCountUp } from '../hooks/useCountUp';
 import { useWaitlistStore } from '../store/useWaitlistStore';
@@ -22,12 +22,13 @@ export default function Hero() {
         e.preventDefault();
         setLoading(true);
         try {
-            await fetch('https://formspree.io/f/xkovveba', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+            await fetch("https://script.google.com/macros/s/AKfycbx-bN2ZKf6gYfM5RO_iGExmOCn9bWuInoQ73Rzoi03gSLfVz_VLknKP6lgUpXCqJWfQ/exec", {
+                method: "POST",
+                mode: "no-cors",
                 body: JSON.stringify({ email })
             });
             increment();
+            useWaitlistStore.getState().fetchCount?.();
             setSubmitted(true);
         } catch (err) {
             increment();

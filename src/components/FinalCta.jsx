@@ -1,4 +1,4 @@
-import { BadgeCheck, Copy, Sparkles, UsersRound } from 'lucide-react';
+import { BadgeCheck, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { cn } from '../lib/utils';
@@ -24,14 +24,22 @@ export default function FinalCta() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        // Formspree submission
+        const payload = {
+            full_name: form.name,
+            email: form.email,
+            states: form.state,
+            avg_deals: form.deals,
+            pain_point: form.pain
+        };
+
         try {
-            await fetch('https://formspree.io/f/xkovveba', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(form)
+            await fetch("https://script.google.com/macros/s/AKfycbx-bN2ZKf6gYfM5RO_iGExmOCn9bWuInoQ73Rzoi03gSLfVz_VLknKP6lgUpXCqJWfQ/exec", {
+                method: "POST",
+                mode: "no-cors",
+                body: JSON.stringify(payload)
             });
             increment();
+            useWaitlistStore.getState().fetchCount?.();
             setSubmitted(true);
         } catch (err) {
             increment(); // Fallback success for demo
@@ -158,31 +166,44 @@ export default function FinalCta() {
                         <div className="w-20 h-20 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-6 text-success animate-scale-in">
                             <BadgeCheck size={40} />
                         </div>
-                        <h2 className="text-4xl font-extrabold mb-4">Welcome to the Future, {form.name}!</h2>
+                        <h2 className="text-4xl font-extrabold mb-4">You're on the list, {form.name.split(' ')[0]}!</h2>
                         <p className="text-white/60 text-lg mb-10">
-                            We've received your submission. 🚀 Want to skip the line? <br />
-                            Refer 3 other agents and get instant early access plus 50% off.
+                            Your spot is secured. Keep an eye on your inbox for <br />
+                            your exclusive beta invite and onboarding details.
                         </p>
 
-                        <div className="bg-white/5 border border-white/10 rounded-3xl p-8 max-w-lg mx-auto">
-                            <h4 className="flex items-center justify-center gap-2 font-bold mb-4">
-                                <UsersRound size={18} /> Referral Link
+                        <div className="bg-white/5 border border-white/10 rounded-3xl p-8 max-w-lg mx-auto relative overflow-hidden group">
+                            {/* Subtle background glow */}
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-primary/10 rounded-full blur-[80px] -z-10 group-hover:bg-primary/20 transition-all duration-700" />
+
+                            <h4 className="flex items-center justify-center gap-2 font-bold mb-6 text-xl">
+                                <Sparkles size={20} className="text-primary" /> Unlocked Perks
                             </h4>
-                            <div className="flex items-center gap-2 bg-white/5 rounded-2xl p-2 border border-white/10">
-                                <code className="flex-1 text-sm font-mono text-primary truncate pl-4">DealDoc.ai/ref/abc123</code>
-                                <button
-                                    onClick={() => navigator.clipboard.writeText('DealDoc.ai/ref/abc123')}
-                                    className="p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all"
-                                >
-                                    <Copy size={18} />
-                                </button>
+
+                            <div className="space-y-4 text-left">
+                                <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/30 transition-colors">
+                                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                                        <span className="text-primary font-bold">1</span>
+                                    </div>
+                                    <div>
+                                        <h5 className="font-bold text-white">Lifetime Discount</h5>
+                                        <p className="text-sm text-white/50 mt-1">Locked in your 30% off founding-member rate forever.</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/30 transition-colors">
+                                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                                        <span className="text-primary font-bold">2</span>
+                                    </div>
+                                    <div>
+                                        <h5 className="font-bold text-white">White-Glove Setup</h5>
+                                        <p className="text-sm text-white/50 mt-1">Our team will handle your first 5 transactions setting up the AI.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="mt-6 flex items-center justify-between text-sm font-bold text-white/40 px-2">
-                                <span>Refers: 0/3</span>
-                                <span>Rank: #{count.toLocaleString()}</span>
-                            </div>
-                            <div className="mt-3 h-2 bg-white/5 rounded-full overflow-hidden">
-                                <div className="h-full bg-primary w-[10%] rounded-full" />
+
+                            <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between text-sm font-bold text-white/40 px-2">
+                                <span>Status: <span className="text-success">Confirmed</span></span>
+                                <span>Position: #{count.toLocaleString()}</span>
                             </div>
                         </div>
                     </div>

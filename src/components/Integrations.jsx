@@ -20,7 +20,7 @@ export default function Integrations() {
     const { ref, isVisible } = useScrollReveal(0.1);
 
     return (
-        <section ref={ref} className="section-padding bg-bg-light">
+        <section id="integrations" ref={ref} className="section-padding bg-bg-light">
             <div className="container-max">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div>

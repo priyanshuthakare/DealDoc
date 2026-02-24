@@ -38,11 +38,15 @@ export default function Footer() {
                             Processing transactions in 48 states.
                         </p>
                         <div className="flex gap-4">
-                            {[Twitter, Linkedin, Github].map((Icon, i) => (
-                                <a key={i} href="#" className="w-10 h-10 bg-white/5 hover:bg-white/10 rounded-xl flex items-center justify-center transition-all border border-white/10">
-                                    <Icon size={18} />
-                                </a>
-                            ))}
+                            <a href="https://x.com/priyaannsshhu" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 hover:bg-white/10 rounded-xl flex items-center justify-center transition-all border border-white/10">
+                                <Twitter size={18} />
+                            </a>
+                            <a href="https://www.linkedin.com/in/priyanshu-thakare/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 hover:bg-white/10 rounded-xl flex items-center justify-center transition-all border border-white/10">
+                                <Linkedin size={18} />
+                            </a>
+                            <a href="https://github.com/priyanshuthakare" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 hover:bg-white/10 rounded-xl flex items-center justify-center transition-all border border-white/10">
+                                <Github size={18} />
+                            </a>
                         </div>
                     </div>
 
